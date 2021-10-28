@@ -58,6 +58,10 @@ for i in range (len(prop)):
            true=0
            break
 
+    if prop[i] in conector_binar:
+       print("{}.'{}' Conector logic binar, asteapta fie propozitie atomica fie formula compusa".format(i, prop[i]))
+       continue
+
     if prop[i].isalpha():
        if i==len(prop)-1:
            true=0
