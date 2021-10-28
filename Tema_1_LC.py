@@ -1,3 +1,10 @@
+# => (Inclus) este -
+# <=> (Echivalent) este =
+# ∨ (Sau) este |
+# ∧ (Si) este &
+# ¬ (Not) este !
+
+
 s=str(input())
 prop=[c for c in s if c!=" "]
 true=1
