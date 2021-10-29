@@ -123,8 +123,11 @@ if len(prop)-1>y and o==1:
                     x=x-1
                     paranteze_inchise=paranteze_inchise-1
 if z==True:
-   print()
-   print(prop[y], "nu are niciun conector inainte")
+    if prop[y-1] in conector_binar:
+        print("Nu exista paranteza inainte de {}".format(prop[y]))
+    else:
+        print()
+        print(prop[y], "nu are niciun conector inainte")
 
 if nr_paranteze_inchise < nr_paranteze_deschise:
     dif=nr_paranteze_deschise-nr_paranteze_inchise
