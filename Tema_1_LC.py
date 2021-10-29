@@ -59,8 +59,13 @@ for i in range (len(prop)):
            break
 
     if prop[i] in conector_binar:
-       print("{}.'{}' Conector logic binar, asteapta fie propozitie atomica fie formula compusa".format(i, prop[i]))
-       continue
+        if i<len(prop)-1:
+            if prop[i+1] in conector_binar or prop[i+1] in conector_unar:
+                print("Nu exista paranteze intre conectori")
+        if i<len(prop)-1:
+            if prop[i-1]==")" and prop[i+1]=="(":
+                print("{}.'{}' Conector logic binar, asteapta fie propozitie atomica fie formula compusa".format(i, prop[i]))
+                continue
 
     if prop[i].isalpha():
        if i==len(prop)-1:
