@@ -22,7 +22,7 @@ for j in prop:
 
 
 x=len(poz_paranteze)-1
-    
+   
 for i in range (len(prop)):
     if prop[i]=="(" and o==1:
         poz_paranteze.append(i)
@@ -77,10 +77,11 @@ for i in range (len(prop)):
         continue
        elif prop[i-1] in conector_binar or prop[i-1] in conector_unar:
             if prop[i+1]==")":
-                print("{}.'{}' Paranteza inchisa, inchide paranteza de la punctul {}".format(i+1, prop[i+1], poz_paranteze[x]))
-                x=x-1
-                c=c+1
-                continue
+                if nr_paranteze_inchise<nr_paranteze_deschise:
+                    print("{}.'{}' Paranteza inchisa, inchide paranteza de la punctul {}".format(i+1, prop[i+1], poz_paranteze[x]))
+                    x=x-1
+                    c=c+1
+                    continue
        elif prop[i+1] not in conector_binar:
             true=0
             print("Nu exista niciun conector dupa {}".format(prop[i]))
