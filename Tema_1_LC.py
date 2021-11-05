@@ -50,6 +50,10 @@ for i in range (len(prop)):
             break
 
     if prop[i] in conector_unar:
+       if prop[i-1].isalpha():
+           true=0
+           print("Nu exista niciun conector binar dupa {}".format(prop[i-1]))
+           break
        if prop[i+1].isalpha() or prop[i+1]=="(":
            print("{}.'{}' Conector logic unar, urmeaza fie propozitie atomica, fie formula compusa".format(i, prop[i]))
            continue
